@@ -4,13 +4,19 @@ import {AllColor} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    width: '40%',
-    color: AllColor.darkGrey,
-    borderRadius: 14,
-    alignSelf: 'center',
+    backgroundColor: AllColor.blue,
+    paddingVertical: 20,
+    paddingHorizontal: 8,
+    marginHorizontal: 25,
+    marginVertical: 23,
+    borderRadius: 3,
+    borderWidth: 0.6,
+    borderColor: '#234245',
   },
-  image: {
-    width: 30,
-    height: 30,
+  text: {
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: AllColor.white,
   },
 });
