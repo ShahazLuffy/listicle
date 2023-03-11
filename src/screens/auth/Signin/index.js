@@ -11,7 +11,7 @@ import {AllColor} from '../../../utils/colors';
 
 const Signin = () => {
   const onSignup = () => {
-    console.log('hello');
+    console.log('you clicked on sign in');
   };
   return (
     <ScrollView style={styles.cointainer}>
