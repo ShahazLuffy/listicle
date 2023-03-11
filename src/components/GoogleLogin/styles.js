@@ -11,9 +11,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    marginBottom: 10,
   },
   image: {
-    width: 80,
+    width: 120,
     height: 80,
+    borderRadius: 25,
   },
 });

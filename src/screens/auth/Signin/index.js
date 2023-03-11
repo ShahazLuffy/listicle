@@ -9,35 +9,28 @@ import Separator from '../../../components/Separator';
 import GoogleLogin from '../../../components/GoogleLogin';
 import {AllColor} from '../../../utils/colors';
 
-const Signup = () => {
-  const [checked, setChecked] = useState(false);
-  const onSignIn = () => {
+const Signin = () => {
+  const onSignup = () => {
     console.log('hello');
   };
   return (
     <ScrollView style={styles.cointainer}>
-      <AuthHeader title="sign up" />
-      <Input label="Name" placeholder="please enter your name" />
+      <AuthHeader title="sign in" />
+
       <Input label="Email" placeholder="please enter a valid Email address" />
       <Input label="Password" placeholder="*******" isPassword />
-      <View style={styles.agreeRow}>
-        <Checkbox checked={checked} onCheck={setChecked} />
-        <Text style={styles.agreeText}>
-          I agree with<Text style={styles.agreeTextBold}> Terms</Text> and{' '}
-          <Text style={styles.agreeTextBold}>Privacy</Text>{' '}
-        </Text>
-      </View>
-      <Button style={styles.button} title="sign up" />
-      <Separator text="or sign up with" />
+
+      <Button style={styles.button} title="sign in" />
+      <Separator text="or sign in with" />
       <GoogleLogin />
       <Text style={styles.footerText}>
-        Already have account?{' '}
-        <Text style={styles.footerLink} onPress={onSignIn}>
-          sign in
+        Don’t have an account?{' '}
+        <Text style={styles.footerLink} onPress={onSignup}>
+          Sign Up
         </Text>{' '}
       </Text>
     </ScrollView>
   );
 };
 
-export default Signup;
+export default Signin;

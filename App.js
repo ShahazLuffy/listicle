@@ -2,10 +2,11 @@ import React, {useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import Signup from './src/screens/auth/Signup';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import Signin from './src/screens/auth/Signin';
+//import Config from 'react-native-config';
 
 const WEB_CLIENT_ID =
   '708570017135-c0fr9ojuqcg64mpa6qu4vd36nnp3ko3q.apps.googleusercontent.com';
-
 const App = () => {
   useEffect(() => {
     GoogleSignin.configure({
@@ -18,7 +19,7 @@ const App = () => {
   return (
     <SafeAreaView>
       {/* <Splash /> */}
-      <Signup />
+      <Signin />
     </SafeAreaView>
   );
 };
