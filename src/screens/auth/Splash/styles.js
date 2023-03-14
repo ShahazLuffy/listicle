@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
+    color: AllColor.black,
   },
   splashSecond: {
     fontSize: 40,
@@ -29,12 +30,13 @@ export const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
+    color: AllColor.black,
   },
   footerText: {
     color: AllColor.blue,
     textAlign: 'center',
     fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 20,
+    marginVertical: 5,
   },
 });

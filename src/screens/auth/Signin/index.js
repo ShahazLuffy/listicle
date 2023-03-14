@@ -9,13 +9,16 @@ import Separator from '../../../components/Separator';
 import GoogleLogin from '../../../components/GoogleLogin';
 import {AllColor} from '../../../utils/colors';
 
-const Signin = () => {
+const Signin = ({navigation}) => {
   const onSignup = () => {
-    console.log('hello');
+    navigation.navigate('Signup');
+  };
+  const onBack = () => {
+    navigation.goBack();
   };
   return (
     <ScrollView style={styles.cointainer}>
-      <AuthHeader title="sign in" />
+      <AuthHeader title="sign in" onBackPress={onBack} />
 
       <Input label="Email" placeholder="please enter a valid Email address" />
       <Input label="Password" placeholder="*******" isPassword />

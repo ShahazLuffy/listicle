@@ -9,14 +9,17 @@ import Separator from '../../../components/Separator';
 import GoogleLogin from '../../../components/GoogleLogin';
 import {AllColor} from '../../../utils/colors';
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [checked, setChecked] = useState(false);
   const onSignIn = () => {
-    console.log('hello');
+    navigation.navigate('Signin');
+  };
+  const onBack = () => {
+    navigation.goBack();
   };
   return (
     <ScrollView style={styles.cointainer}>
-      <AuthHeader title="sign up" />
+      <AuthHeader title="sign up" onBackPress={onBack} />
       <Input label="Name" placeholder="please enter your name" />
       <Input label="Email" placeholder="please enter a valid Email address" />
       <Input label="Password" placeholder="*******" isPassword />
