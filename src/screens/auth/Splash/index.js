@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, Image, View, Pressable} from 'react-native';
 import {styles} from './styles';
 import Button from '../../../components/Button';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Splash = ({navigation}) => {
   console.log('navigation splash :>>>', navigation);
@@ -19,22 +20,24 @@ const Splash = ({navigation}) => {
   //   <Text>You Will Find All You Need Here</Text>,
   // ];
   return (
-    <View style={styles.cointainer}>
-      <Image
-        style={styles.image}
-        resizeMode="contain"
-        source={require('../../../assets/10050_1.png')}
-      />
-      <View style={styles.titleContainer}>
-        <Text style={styles.splashFirst}> You Will </Text>
-        <Text style={styles.splashSecond}> Find All You Need </Text>
-        <Text style={styles.splashThird}> Here</Text>
+    <SafeAreaView>
+      <View style={styles.cointainer}>
+        <Image
+          style={styles.image}
+          resizeMode="contain"
+          source={require('../../../assets/10050_1.png')}
+        />
+        <View style={styles.titleContainer}>
+          <Text style={styles.splashFirst}> You Will </Text>
+          <Text style={styles.splashSecond}> Find All You Need </Text>
+          <Text style={styles.splashThird}> Here</Text>
+        </View>
+        <Button onPress={onSignUp} title="sign up" />
+        <Pressable onPress={onsignIn} hitSlop={20}>
+          <Text style={styles.footerText}> Sign In </Text>
+        </Pressable>
       </View>
-      <Button onPress={onSignUp} title="sign up" />
-      <Pressable onPress={onsignIn} hitSlop={20}>
-        <Text style={styles.footerText}> Sign In </Text>
-      </Pressable>
-    </View>
+    </SafeAreaView>
   );
 };
 
