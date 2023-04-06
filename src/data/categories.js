@@ -30,4 +30,4 @@ const categories = [
   },
 ];
 
-export default React.memo(categories);
+export default categories;

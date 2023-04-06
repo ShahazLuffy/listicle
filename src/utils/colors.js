@@ -8,4 +8,5 @@ export const AllColor = {
   gray: '#8D9BB5',
   lightGray: '#DADADA',
   darkGrey: '#3F4A59',
+  textGray: '#606060',
 };

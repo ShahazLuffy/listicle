@@ -5,12 +5,20 @@ import {AllColor} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 24,
+    marginHorizontal: 8,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  imageContainer: {},
+  imageContainer: {
+    backgroundColor: AllColor.lightGray,
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 8,
+  },
   image: {
-    width: 24,
-    height: 24,
+    width: 32,
+    height: 32,
   },
   title: {
     color: AllColor.gray,

@@ -3,9 +3,11 @@ import {Pressable, Text, View, Image} from 'react-native';
 import {styles} from './styles';
 import Input from '../Input';
 
-const CategoryBox = ({title, image, onPress}) => {
+const CategoryBox = ({title, image, onPress, isFirst}) => {
   return (
-    <Pressable onPress={onPress} style={styles.container}>
+    <Pressable
+      onPress={onPress}
+      style={(styles.container, isFirst ? {marginLeft: 16} : {marginLeft: 10})}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{uri: image}} />
       </View>
