@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import {AllColor} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
-  container: {marginBottom: 20},
+  container: {marginBottom: 10},
   label: {
     fontSize: 18,
     fontWeight: 500,
