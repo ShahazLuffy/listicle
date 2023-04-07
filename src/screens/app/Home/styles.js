@@ -5,7 +5,7 @@ import {AllColor} from '../../../utils/colors';
 
 export const styles = StyleSheet.create({
   list: {
-    paddingVertical: 24,
+    paddingVertical: 8,
   },
   productsList: {
     paddingHorizontal: 16,
