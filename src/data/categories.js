@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
   {
     title: 'popular',
     image: 'https://assets.stickpng.com/thumbs/5f491cbe68ecc70004ae702e.png',
@@ -29,5 +29,3 @@ const categories = [
     image: 'https://assets.stickpng.com/thumbs/6122619210aa310004f3981c.png',
   },
 ];
-
-export default categories;

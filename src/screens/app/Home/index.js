@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {FlatList, ScrollView, View, Text} from 'react-native';
 import {styles} from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -10,6 +10,20 @@ import {categories} from '../../../data/categories';
 import {products} from '../../../data/products';
 
 const Home = () => {
+  const [selectedCategory, setSeletectedCategory] = useState();
+  const [filteredProduct, setFilteredProduct] = useState(products);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      const updatedProducts = products.filter(
+        product => product?.category === selectedCategory,
+      );
+      setFilteredProduct(updatedProducts);
+    } else {
+      setFilteredProduct(products);
+    }
+  }, [selectedCategory]);
+
   const categories1 = [
     {
       title: 'popular',
@@ -88,6 +102,8 @@ const Home = () => {
     console.log('item', item, index, item.title);
     return (
       <CategoryBox
+        onPress={() => setSeletectedCategory(item?.id)}
+        isSelected={item?.id === selectedCategory}
         isFirst={index === 0}
         title={item?.title}
         image={item?.image}
@@ -103,7 +119,7 @@ const Home = () => {
       <Header showSearch title="Find All You Need" showLogout />
       <FlatList
         style={styles.list}
-        data={categories1}
+        data={categories}
         renderItem={renderCategoryItem}
         keyExtractor={(item, index) => String(index)}
         horizontal
@@ -112,7 +128,7 @@ const Home = () => {
 
       <FlatList
         style={styles.productsList}
-        data={products1}
+        data={filteredProduct}
         renderItem={renderProductItem}
         keyExtractor={item => String(item.id)}
         numColumns={2}

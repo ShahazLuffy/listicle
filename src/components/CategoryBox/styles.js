@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
     marginBottom: 8,
+    marginLeft: 16,
   },
   image: {
     width: 32,
@@ -22,5 +23,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: AllColor.gray,
+    marginLeft: 16,
   },
 });

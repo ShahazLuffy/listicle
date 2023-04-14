@@ -2,16 +2,33 @@ import React, {useState} from 'react';
 import {Pressable, Text, View, Image} from 'react-native';
 import {styles} from './styles';
 import Input from '../Input';
+import {AllColor} from '../../utils/colors';
 
-const CategoryBox = ({title, image, onPress, isFirst}) => {
+const CategoryBox = ({title, image, onPress, isFirst, isSelected}) => {
   return (
     <Pressable
       onPress={onPress}
-      style={[styles.container, isFirst ? {marginLeft: 24} : {}]}>
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{uri: image}} />
+      style={(styles.container, isFirst ? {marginLeft: 24} : {})}>
+      <View
+        style={[
+          styles.imageContainer,
+          isSelected ? {backgroundColor: AllColor.black} : {},
+        ]}>
+        <Image
+          style={[
+            styles.image,
+            isSelected ? {backgroundColor: AllColor.black} : {},
+          ]}
+          source={{uri: image}}
+        />
       </View>
-      <Text style={styles.title}>{title}</Text>
+      <Text
+        style={[
+          styles.title,
+          isSelected ? {color: AllColor.blue, fontWeight: '500'} : {},
+        ]}>
+        {title}
+      </Text>
     </Pressable>
   );
 };

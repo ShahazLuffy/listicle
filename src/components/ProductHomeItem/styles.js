@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: (width - 64) / 2,
-    height: 125,
+    height: 100,
     borderRadius: 8,
   },
   price: {
