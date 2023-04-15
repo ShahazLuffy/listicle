@@ -11,18 +11,32 @@ import {products} from '../../../data/products';
 
 const Home = () => {
   const [selectedCategory, setSeletectedCategory] = useState();
+  const [keyword, setKeyword] = useState();
   const [filteredProduct, setFilteredProduct] = useState(products);
+  console.log(keyword);
 
   useEffect(() => {
-    if (selectedCategory) {
+    if (selectedCategory && !keyword) {
       const updatedProducts = products.filter(
         product => product?.category === selectedCategory,
       );
       setFilteredProduct(updatedProducts);
-    } else {
+    } else if (selectedCategory && keyword) {
+      const updatedProducts = products.filter(
+        product =>
+          product?.category === selectedCategory &&
+          product?.title.toLowerCase().includes(keyword.toLowerCase()),
+      );
+      setFilteredProduct(updatedProducts);
+    } else if (!selectedCategory && keyword) {
+      const updatedProducts = products.filter(product =>
+        product?.title.toLowerCase().includes(keyword.toLowerCase()),
+      );
+      setFilteredProduct(updatedProducts);
+    } else if (!selectedCategory && !keyword) {
       setFilteredProduct(products);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, keyword]);
 
   const categories1 = [
     {
@@ -116,7 +130,13 @@ const Home = () => {
   };
   return (
     <SafeAreaView>
-      <Header showSearch title="Find All You Need" showLogout />
+      <Header
+        showSearch
+        keyword={keyword}
+        onSearch={setKeyword}
+        title="Find All You Need"
+        showLogout
+      />
       <FlatList
         style={styles.list}
         data={categories}

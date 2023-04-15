@@ -10,13 +10,15 @@ const Header = ({
   showLogout,
   showSearch,
   showBack,
+  onSearch,
+  keyword,
 }) => {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const onSearchClick = () => {
     setShowSearchInput(s => !s);
   };
   return (
-    <View>
+    <View style={styles.mainContainer}>
       <View style={styles.container}>
         {showBack ? (
           <Pressable onPress={onBackPress} hitSlop={20}>
@@ -51,7 +53,13 @@ const Header = ({
         {/* be jaye : null ma miaim ye style khali tarif mikonim chon mikhaim age null bood yechizi por she va element hamon ja be ja nashan ro safhe */}
       </View>
 
-      {showSearchInput ? <Input placeholder="search keyword" /> : null}
+      {showSearchInput ? (
+        <Input
+          onChangeText={onSearch}
+          value={keyword}
+          placeholder="search keywords"
+        />
+      ) : null}
     </View>
   );
 };
